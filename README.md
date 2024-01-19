@@ -1,0 +1,1 @@
+Aplicacion basica abm realizada en html5, css3, javascript. Se trata de una aplicacion de agregar eliminar y modificar productos desde el localStorage, utilizando el dom para realizar diferentes acciones: filtrado por categoria, busqueda por nombre, filtrado precios y visualizacion de las propiedades de un producto

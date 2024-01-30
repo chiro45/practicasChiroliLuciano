@@ -12,6 +12,7 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
-    "install": "^0.13.0"
+    "install": "^0.13.0",
+    "sweetalert2": "^11.10.4"
   }
 }

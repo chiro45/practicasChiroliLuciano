@@ -11,8 +11,3 @@ export const handleSearchProducByName = () => {
   );
   handleRenderListItems(result);
 };
-const buttonConfirmSearch = document.getElementById("buttonSearch");
-
-buttonConfirmSearch.addEventListener("click", () => {
-  handleSearchProducByName();
-});

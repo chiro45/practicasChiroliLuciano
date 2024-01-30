@@ -5,6 +5,8 @@ import {
 } from "../localStorage/localStorage";
 import { closePopUP, openPopUp } from "../popUp/popUp";
 import { handleGetProductsToStore } from "../store/store";
+import Swal from "sweetalert2";
+
 // Asignar las funciones a los botones
 export const saveProduct = () => {
   // Obtener los valores de los campos de entrada
@@ -12,30 +14,49 @@ export const saveProduct = () => {
   let imagen = document.getElementById("imagen").value;
   let precio = document.getElementById("precio").value;
   let categoria = document.getElementById("categoria").value;
-  // Crear un objeto con los valores
-  let product;
-  //editar o guardar un producto si este ya existe
-  if (elementActive) {
-    product = {
-      ...elementActive,
-      nombre: name,
-      imagen,
-      precio,
-      categoria,
-    };
+  console.log(name.length, imagen.length, parseInt(precio), categoria);
+  if (
+    name.length > 0 &&
+    imagen.length > 0 &&
+    parseInt(precio) !== 0 &&
+    categoria !== "Seleccione una categoria"
+  ) {
+    let product;
+    //editar o guardar un producto si este ya existe
+    if (elementActive) {
+      product = {
+        ...elementActive,
+        nombre: name,
+        imagen,
+        precio,
+        categoria,
+      };
+    } else {
+      product = {
+        id: new Date(),
+        nombre: name,
+        imagen,
+        precio,
+        categoria,
+      };
+    }
+    setProductsLocalStorage(product);
+    handleGetProductsToStore();
+    closePopUP();
+    setProductActive(null);
+    Swal.fire({
+      title: "perfecto!",
+      text: "Articulo agregado correctamente!",
+      icon: "success",
+    });
   } else {
-    product = {
-      id: new Date(),
-      nombre: name,
-      imagen,
-      precio,
-      categoria,
-    };
+    Swal.fire({
+      title: "Error!",
+      text: "Debes ingresar todos los campos correspondientes",
+      icon: "error",
+      confirmButtonText: "Aceptar",
+    });
   }
-  setProductsLocalStorage(product);
-  handleGetProductsToStore();
-  closePopUP();
-  setProductActive(null);
 };
 // guardar el producto
 document.getElementById("aceptarBtn").addEventListener("click", saveProduct);
@@ -73,11 +94,24 @@ export const showPropsProduct = (productIn) => {
 };
 
 export const handleDeleteProduct = () => {
-  const products = handleGetProductsLocalStorage();
-  const resutl = products.filter((el) => el.id !== elementActive.id);
-  localStorage.setItem("products", JSON.stringify(resutl));
-  handleGetProductsToStore();
-  closePopUP();
+  Swal.fire({
+    title: "¿Seguro deseas eliminar este elemento?",
+    showCancelButton: true,
+    confirmButtonText: "Eliminar",
+    cancelButtonText: `Cancelar`,
+  }).then((result) => {
+    //si se confirma
+    if (result.isConfirmed) {
+      const products = handleGetProductsLocalStorage();
+      const resutl = products.filter((el) => el.id !== elementActive.id);
+      localStorage.setItem("products", JSON.stringify(resutl));
+      handleGetProductsToStore();
+      closePopUP();
+    } else if (result.isDenied) {
+      //si se cancela
+      closePopUP();
+    }
+  });
 };
 
 export const handleProductActive = (product) => {

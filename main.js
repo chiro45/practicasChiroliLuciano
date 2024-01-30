@@ -1,5 +1,6 @@
 // main.js
 import { renderCategories } from "./helpers/categories/categories";
+import { handleSearchProducByName } from "./helpers/searchBar/searchBar";
 import { handleGetProductsToStore } from "./helpers/store/store";
 import "./style.css";
 
@@ -19,3 +20,10 @@ export const setProductActive = (productIn) => {
 renderCategories();
 handleGetProductsToStore();
 
+
+
+//barra de busqueda
+const buttonConfirmSearch = document.getElementById("buttonSearch");
+buttonConfirmSearch.addEventListener("click", () => {
+  handleSearchProducByName();
+});

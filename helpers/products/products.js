@@ -17,7 +17,7 @@ export const saveProduct = () => {
   //editar o guardar un producto si este ya existe
   if (elementActive) {
     product = {
-      ...product,
+      ...elementActive,
       nombre: name,
       imagen,
       precio,
@@ -41,18 +41,6 @@ export const saveProduct = () => {
 document.getElementById("aceptarBtn").addEventListener("click", saveProduct);
 
 export const cancel = () => {
-  // Obtener los elementos de entrada
-  let nameInput = document.getElementById("name");
-  let imagenInput = document.getElementById("imagen");
-  let precioInput = document.getElementById("precio");
-  let categoriaInput = document.getElementById("categoria");
-
-  // Establecer los valores en los campos de entrada
-  nameInput.value = "";
-  imagenInput.value = "";
-  precioInput.value = 0;
-  categoriaInput.value = "Seleccione una categoria";
-
   // Cerrar el modal (en este caso, simplemente ocultarlo)
   closePopUP();
   setProductActive(null);

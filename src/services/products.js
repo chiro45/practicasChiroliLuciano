@@ -2,8 +2,8 @@ import { elementActive, setProductActive } from "../../main";
 import {
   handleGetProductsLocalStorage,
   setProductsLocalStorage,
-} from "../localStorage/localStorage";
-import { closePopUP, openPopUp } from "../popUp/popUp";
+} from "../persistence/localStorage";
+import { closePopUP, openPopUp } from "../views/popUp";
 import { handleGetProductsToStore } from "../store/store";
 import Swal from "sweetalert2";
 

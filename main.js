@@ -1,5 +1,5 @@
 // main.js
-import { renderCategories } from "./helpers/categories/categories";
+import { renderCategories } from "./src/services/categories";
 import { handleSearchProducByName } from "./helpers/searchBar/searchBar";
 import { handleGetProductsToStore } from "./helpers/store/store";
 import "./style.css";
@@ -19,8 +19,6 @@ export const setProductActive = (productIn) => {
 //primerRender para visualizacion de la store
 renderCategories();
 handleGetProductsToStore();
-
-
 
 //barra de busqueda
 const buttonConfirmSearch = document.getElementById("buttonSearch");

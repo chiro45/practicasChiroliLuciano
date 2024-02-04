@@ -1,5 +1,5 @@
 import { categoryActive, setCategorieActive } from "../../main";
-import { handleGetProductsLocalStorage } from "../localStorage/localStorage";
+import { handleGetProductsLocalStorage } from "../persistence/localStorage";
 import { handleRenderListItems } from "../store/store";
 
 //=============CATEGORIAS===========

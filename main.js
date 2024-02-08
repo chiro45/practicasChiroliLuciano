@@ -1,7 +1,8 @@
 // main.js
+
 import { renderCategories } from "./src/services/categories";
-import { handleSearchProducByName } from "./helpers/searchBar/searchBar";
-import { handleGetProductsToStore } from "./helpers/store/store";
+import { handleSearchProducByName } from "./src/services/searchBar";
+import { handleGetProductsToStore } from "./src/views/store";
 import "./style.css";
 
 //=======variables de mi aplicacion===========

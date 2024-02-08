@@ -3,8 +3,8 @@ import { setProductActive } from "../../main";
 import {
   handleGetProductsLocalStorage,
   setProductsLocalStorage,
-} from "../localStorage/localStorage";
-import { handleProductActive } from "../products/products";
+} from "../persistence/localStorage";
+import { handleProductActive } from "../services/products";
 
 //funcion que trae los datos de la bd
 export const handleGetProductsToStore = () => {

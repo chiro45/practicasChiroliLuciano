@@ -1,11 +1,11 @@
-import { elementActive, setProductActive } from "../../main";
+import Swal from "sweetalert2";
 import {
   handleGetProductsLocalStorage,
   setProductsLocalStorage,
 } from "../persistence/localStorage";
+import { handleGetProductsToStore } from "../views/store";
+import { elementActive, setProductActive } from "../../main";
 import { closePopUP, openPopUp } from "../views/popUp";
-import { handleGetProductsToStore } from "../store/store";
-import Swal from "sweetalert2";
 
 // Asignar las funciones a los botones
 export const saveProduct = () => {
@@ -46,7 +46,7 @@ export const saveProduct = () => {
     setProductActive(null);
     Swal.fire({
       title: "perfecto!",
-      text: "Articulo agregado correctamente!",
+      text: "Articulo guardado correctamente!",
       icon: "success",
     });
   } else {

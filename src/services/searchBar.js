@@ -1,5 +1,7 @@
-import { handleGetProductsLocalStorage } from "../localStorage/localStorage";
-import { handleRenderListItems } from "../store/store";
+
+import { handleGetProductsLocalStorage } from "../persistence/localStorage";
+import { handleRenderListItems } from "../views/store";
+
 
 //==========SEARCHBAR=========================
 export const inputSearch = document.getElementById("inputSearch");

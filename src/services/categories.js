@@ -1,6 +1,6 @@
 import { categoryActive, setCategorieActive } from "../../main";
 import { handleGetProductsLocalStorage } from "../persistence/localStorage";
-import { handleRenderListItems } from "../store/store";
+import { handleRenderListItems } from "../views/store";
 
 //=============CATEGORIAS===========
 const handleFilterProductsByCategory = (categoryIn) => {

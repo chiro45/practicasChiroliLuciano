@@ -8,13 +8,11 @@ export const handleGetProductsLocalStorage = () => {
 export const setProductsLocalStorage = (item) => {
   // Obtener el array almacenado en localStorage y convertirlo a un array JavaScript
   let storedProducts = handleGetProductsLocalStorage() || [];
-  console.log(item);
   if (item) {
     // Buscar si ya existe un producto con el mismo id
     const existingProductIndex = storedProducts.findIndex(
       (product) => product.id === item.id
     );
-    console.log(existingProductIndex);
 
     if (existingProductIndex !== -1) {
       // Si existe, reemplazar el producto en el mismo índice

@@ -2,9 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vite App</title>
 
   <!-- FUENTE -->
@@ -15,45 +14,44 @@
   <!-- ICONS -->
   <!-- loads the entire Variable Font -->
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 
 <body>
   <!-- header -->
-  <div class="container__headerPrincipal">
-    <div class="container__header">
-      <div class="container__inputHeader">
-        <input type="text" id="inputSearch" placeholder="Busca un producto" />
-        <button id="buttonSearch">Buscar
-          <span class="material-symbols-outlined">
-            search
-          </span>
-
-        </button>
+  <header>
+    <div class="container__headerPrincipal">
+      <div class="container__header">
+        <div class="container__inputHeader">
+          <input type="text" id="inputSearch" placeholder="Busca un producto">
+          <button id="buttonSearch">Buscar
+            <span class="material-symbols-outlined">
+              search
+            </span>
+          </button>
+        </div>
+        <div class="containerButtonStore">
+          <button id="addProduct" class="buttonStore">
+            Añadir un producto
+            <span class="material-symbols-outlined">library_add</span>
+          </button>
+        </div>
       </div>
-      <div class="containerButtonStore">
-        <button id="addProduct" class="buttonStore">
-          Añadir un producto
-          <span class="material-symbols-outlined">library_add</span>
-        </button>
-      </div>
     </div>
-  </div>
+  </header>
 
-  <div class="containerView">
-    <div class="aside">
-      <h2>Categorias <span class="material-symbols-outlined">
-          filter_list
-        </span></h2>
-      <ul id="listFilter">
+  <main>
+    <div class="containerView">
+      <aside class="aside">
+        <h2>Categorias <span class="material-symbols-outlined">filter_list</span></h2>
+        <ul id="listFilter"></ul>
+      </aside>
 
-      </ul>
+      <div class="store" id="storeContainer"></div>
     </div>
+  </main>
 
-    <div class="store" id="storeContainer">
-    </div>
-
-  </div>
   <!-- popUP add or edit product -->
   <div class="popUp__container" id="myModal">
     <div class="popUpContent">
@@ -61,9 +59,9 @@
         <h1>Agregar o modificar un producto</h1>
       </div>
       <div class="divPropsItem">
-        <input type="text" placeholder="name" id="name" />
-        <input type="text" placeholder="imagen" id="imagen" />
-        <input type="number" value="0" placeholder="precio" id="precio" />
+        <input type="text" placeholder="name" id="name">
+        <input type="text" placeholder="imagen" id="imagen">
+        <input type="number" value="0" placeholder="precio" id="precio">
         <select id="categoria">
           <option>Seleccione una categoria</option>
           <option>Gaseosas</option>
@@ -78,6 +76,7 @@
       </div>
     </div>
   </div>
+
   <script type="module" src="/main.js"></script>
 </body>
 

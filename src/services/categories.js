@@ -5,30 +5,33 @@ import { handleRenderListItems } from "../views/store";
 //=============CATEGORIAS===========
 const handleFilterProductsByCategory = (categoryIn) => {
   const products = handleGetProductsLocalStorage();
-  if (categoryIn === categoryActive) {
-    handleRenderListItems(products);
-  } else {
-    setCategorieActive(categoryIn);
-    if (categoryIn === "Hamburguesas") {
-      const result = products.filter((el) => el.categoria === `${categoryIn}`);
-      handleRenderListItems(result);
-    } else if (categoryIn === "mayorPrecio") {
-      let result = products.sort((a, b) => b.precio - a.precio);
-      handleRenderListItems(result);
-    } else if (categoryIn === "menorPrecio") {
-      let result = products.sort((a, b) => a.precio - b.precio);
-      handleRenderListItems(result);
-    } else if (categoryIn === "Papas") {
-      const result = products.filter((el) => el.categoria === `${categoryIn}`);
-      handleRenderListItems(result);
-    } else if (categoryIn === "Gaseosas") {
-      const result = products.filter((el) => el.categoria === `${categoryIn}`);
-      handleRenderListItems(result);
-    } else {
+
+  switch (categoryIn) {
+    case categoryActive:
       handleRenderListItems(products);
-    }
+      break;
+    case "Hamburguesas":
+    case "Papas":
+    case "Gaseosas":
+      const filteredResult = products.filter(
+        (el) => el.categoria === categoryIn
+      );
+      handleRenderListItems(filteredResult);
+      break;
+    case "mayorPrecio":
+      const sortedByHighestPrice = products.sort((a, b) => b.precio - a.precio);
+      handleRenderListItems(sortedByHighestPrice);
+      break;
+    case "menorPrecio":
+      const sortedByLowestPrice = products.sort((a, b) => a.precio - b.precio);
+      handleRenderListItems(sortedByLowestPrice);
+      break;
+    default:
+      handleRenderListItems(products);
+      break;
   }
 };
+
 //render de la vista de las categorias
 export const renderCategories = () => {
   const ulList = document.getElementById("listFilter");

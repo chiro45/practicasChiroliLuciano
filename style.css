@@ -150,21 +150,37 @@ body {
 /* ============STORE======= */
 
 .store {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  max-height: 100%;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
-  justify-items: center;
-  padding: 2rem;
-  gap: 2rem;
+  max-height: 90vh;
 }
 .cardContainer {
-  width: 18vw;
-  height: 50vh;
+  width: 15vw;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.main-category {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 2vh;
+  padding: 0.4rem 0;
+}
+.catregory-title {
+  font-size: 4vh;
+  font-weight: 500;
+}
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  justify-items: center;
+  gap: 2vh;
 }
 .cardItem {
   height: 100%;

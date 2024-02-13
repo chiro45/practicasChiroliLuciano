@@ -14,7 +14,6 @@ export const saveProduct = () => {
   let imagen = document.getElementById("imagen").value;
   let precio = document.getElementById("precio").value;
   let categoria = document.getElementById("categoria").value;
-  console.log(name.length, imagen.length, parseInt(precio), categoria);
   if (
     name.length > 0 &&
     imagen.length > 0 &&

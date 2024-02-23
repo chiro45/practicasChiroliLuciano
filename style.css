@@ -157,7 +157,7 @@ body {
 }
 .cardContainer {
   width: 15vw;
-  height: 30vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,11 +201,11 @@ body {
 .cardItem img {
   width: 100%;
   border-radius: 0.4rem 0.4rem 0 0;
-  height: 75%;
+  height: 65%;
   object-fit: cover;
 }
 .cardItem__description {
-  height: 25%;
+  height: 35%;
   width: 60%;
   display: flex;
   justify-content: space-around;
